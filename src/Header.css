@@ -1,0 +1,24 @@
+/* components/Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.header .logo {
+  font-weight: bold;
+}
+
+.header input[type="search"] {
+  padding: 0.5rem;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
