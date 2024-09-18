@@ -285,9 +285,13 @@ a :hover{
 .repo-link {
 	display: flex;
 	justify-content: center;
-	padding-top: 16rem;
+	padding: 2rem;
 	color: white;
 	&:hover {
 		color: wheat;
 	}
+}
+
+#root{
+	padding: 5rem;
 }

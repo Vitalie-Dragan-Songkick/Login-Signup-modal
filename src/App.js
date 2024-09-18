@@ -78,7 +78,9 @@ function AuthContainer() {
             <form action="#">
               <h1>Create Account</h1>
               <div class="social-container">
+                {/* eslint-disable-next-line */}
                 <a href="#" class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
+                {/* eslint-disable-next-line */}
                 <a href="#" class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
               </div>
               <span>or use your email for registration</span>
@@ -92,15 +94,19 @@ function AuthContainer() {
             <form action="#">
               <h1>Sign in</h1>
               <div class="social-container">
+                {/* eslint-disable-next-line */}
                 <a href="#" class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
+                {/* eslint-disable-next-line */}
                 <a href="#" class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
               </div>
               <span>or use your account</span>
               <input type="email" placeholder="Email" required/>
               <input type="password" placeholder="Password" required/>
+              {/* eslint-disable-next-line */}
               <a href="#">Forgot your password?</a>
               <button class="sign">Sign In</button>
             </form>
+
           </div>
           <div class="logo"></div>
           <div class="overlay-container">
