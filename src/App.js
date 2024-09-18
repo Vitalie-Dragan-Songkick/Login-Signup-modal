@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -8,39 +8,39 @@ library.add(fab);
 // import { useHistory } from 'react-router-dom';
 
 function AuthContainer() {
-  // const [isLoginView, setIsLoginView] = useState(true);
-  // // const [username, setUsername] = useState('');
-  // // const [password, setPassword] = useState('');
-  // // const history = useHistory();
+  const [isLoginView, setIsLoginView] = useState(true);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  // const history = useHistory();
 
-  // // const toggleView = () => setIsLoginView(!isLoginView);
+  const toggleView = () => setIsLoginView(!isLoginView);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const response = await fetch('http://localhost:3000/users/sign_in', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Authorization': `Bearer ${process.env.REACT_APP_SONGKICK_API_KEY}`
-  //       },
-  //       body: JSON.stringify({
-  //         username: username,
-  //         password: password,
-  //       }),
-  //     });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3000/users/sign_in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.REACT_APP_SONGKICK_API_KEY}`
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
 
-  //     if (response.ok) {
-  //       console.log('Sign-in successful');
-  //       // Redirect or perform other actions upon successful sign-in
-  //       // history.push('/'); // Redirect to the home page, modify as needed
-  //     } else {
-  //       console.error('Sign-in failed');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error occurred during sign-in:', error);
-  //   }
-  // };
+      if (response.ok) {
+        console.log('Sign-in successful');
+        // Redirect or perform other actions upon successful sign-in
+        // history.push('/'); // Redirect to the home page, modify as needed
+      } else {
+        console.error('Sign-in failed');
+      }
+    } catch (error) {
+      console.error('Error occurred during sign-in:', error);
+    }
+  };
 
   useEffect(() => {
     const signUpButton = document.getElementById('signUp');
@@ -79,8 +79,8 @@ function AuthContainer() {
             <form action="#">
               <h1>Create Account</h1>
               <div class="social-container">
-                <a href="\" target='_blank' class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
-                <a href="\" target='_blank' class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
+                <a href="#" class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
+                <a href="#" class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
               </div>
               <span>or use your email for registration</span>
               <input type="text" placeholder="Name" required/>
@@ -93,13 +93,13 @@ function AuthContainer() {
             <form action="#">
               <h1>Sign in</h1>
               <div class="social-container">
-                <a href="\" target='_blank' class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
-                <a href="\" target='_blank' class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
+                <a href="#" class="social google"><FontAwesomeIcon icon="fa-brands fa-google" style={{color: "#828282",}} /></a>
+                <a href="#" class="social spotify"><FontAwesomeIcon icon="fa-brands fa-spotify" style={{color: "#828282",}} /></a>
               </div>
               <span>or use your account</span>
               <input type="email" placeholder="Email" required/>
               <input type="password" placeholder="Password" required/>
-              <a href="\" target='_blank' >Forgot your password?</a>
+              <a href="#">Forgot your password?</a>
               <button class="sign">Sign In</button>
             </form>
           </div>
@@ -120,6 +120,7 @@ function AuthContainer() {
           </div>
         </div>
       </div>
+      <a href="https://github.com/Vitalie-Dragan-Songkick/Login-Signup-modal" target='_blank' rel="noreferrer" className='repo-link'> - See The Repository On Github - </a>
     </>
   );
 }

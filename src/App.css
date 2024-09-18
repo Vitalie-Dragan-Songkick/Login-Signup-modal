@@ -269,7 +269,7 @@ a :hover{
 	color: #6E6E6E;
 }
 .social{
-	font-size: 300%;
+	font-size: 2.3rem;
 }
 @keyframes beat {
   0%, 100% {
@@ -281,4 +281,13 @@ a :hover{
 	50% {
     transform: scale(0.8);
   }
+}
+.repo-link {
+	display: flex;
+	justify-content: center;
+	padding-top: 16rem;
+	color: white;
+	&:hover {
+		color: wheat;
+	}
 }
