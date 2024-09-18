@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -8,39 +8,38 @@ library.add(fab);
 // import { useHistory } from 'react-router-dom';
 
 function AuthContainer() {
-  const [isLoginView, setIsLoginView] = useState(true);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  // const history = useHistory();
+//   const [isLoginView, setIsLoginView] = useState(true);
+//   // const [username, setUsername] = useState('');
+//   // const [password, setPassword] = useState('');
+//   // const history = useHistory();
 
-  const toggleView = () => setIsLoginView(!isLoginView);
+//   const toggleView = () => setIsLoginView(!isLoginView);
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     try {
+//       const response = await fetch('http://localhost:3000/users/sign_in', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${process.env.REACT_APP_SONGKICK_API_KEY}`
+//         },
+//         body: JSON.stringify({
+//           username: username,
+//           password: password,
+//         }),
+//       });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await fetch('http://localhost:3000/users/sign_in', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.REACT_APP_SONGKICK_API_KEY}`
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password,
-        }),
-      });
-
-      if (response.ok) {
-        console.log('Sign-in successful');
-        // Redirect or perform other actions upon successful sign-in
-        // history.push('/'); // Redirect to the home page, modify as needed
-      } else {
-        console.error('Sign-in failed');
-      }
-    } catch (error) {
-      console.error('Error occurred during sign-in:', error);
-    }
-  };
+//       if (response.ok) {
+//         console.log('Sign-in successful');
+//         // Redirect or perform other actions upon successful sign-in
+//         // history.push('/'); // Redirect to the home page, modify as needed
+//       } else {
+//         console.error('Sign-in failed');
+//       }
+//     } catch (error) {
+//       console.error('Error occurred during sign-in:', error);
+//     }
+//   };
 
   useEffect(() => {
     const signUpButton = document.getElementById('signUp');
